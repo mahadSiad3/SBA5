@@ -4,22 +4,25 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
 
-    _id: ObjectId,
-    username: {
+     username :{
         type: String,
         required: true,
+        unique:true
     },
-    email: {
+    email:{
         type: String,
         required: true,
-        unique: true
+        unique:true
     },
-    password: {
-        type: String,
+    password:{
+        type:String,
         required: true,
-
+        
     },
-    favoriteGenres: [String],
+    favoriteGenres: String,
     joinedAt: Date
 
 })
+
+let users = mongoose.model("Users",userSchema);
+export default users
