@@ -20,7 +20,10 @@ const userSchema = new Schema({
         
     },
     favoriteGenres: String,
-    joinedAt: Date
+    joinedAt: {
+        type: Date,
+        default: Date.now
+    }
 
 })
 
